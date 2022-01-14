@@ -1,6 +1,6 @@
-import type { AWS } from '@serverless/typescript';
+import type { AWS } from '@serverless/typescript'
 
-import hello from '@functions/hello';
+import hello from '@functions/hello'
 
 const serverlessConfiguration: AWS = {
   service: 'aws-serverless-typescript-template',
@@ -13,8 +13,8 @@ const serverlessConfiguration: AWS = {
       exclude: ['aws-sdk'],
       target: 'node14',
       define: { 'require.resolve': undefined },
-      platform: 'node',
-    },
+      platform: 'node'
+    }
   },
   plugins: ['serverless-esbuild'],
   provider: {
@@ -22,16 +22,16 @@ const serverlessConfiguration: AWS = {
     runtime: 'nodejs14.x',
     apiGateway: {
       minimumCompressionSize: 1024,
-      shouldStartNameWithService: true,
+      shouldStartNameWithService: true
     },
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
-      NODE_OPTIONS: '--enable-source-maps --stack-trace-limit=1000',
+      NODE_OPTIONS: '--enable-source-maps --stack-trace-limit=1000'
     },
-    lambdaHashingVersion: '20201221',
+    lambdaHashingVersion: '20201221'
   },
   // import the function via paths
-  functions: { hello },
-};
+  functions: { hello }
+}
 
-module.exports = serverlessConfiguration;
+module.exports = serverlessConfiguration
