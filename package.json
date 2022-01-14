@@ -4,6 +4,7 @@
   "description": "Serverless aws-nodejs-typescript template",
   "main": "serverless.ts",
   "scripts": {
+    "start:local": "serverless invoke local --function hello --data '{ \"body\": { \"name\": \"foobar\" }}'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint . --fix",
     "pre-commit": "lint-staged",
